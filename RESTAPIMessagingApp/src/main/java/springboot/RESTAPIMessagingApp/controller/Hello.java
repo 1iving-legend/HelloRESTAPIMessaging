@@ -1,6 +1,7 @@
 package springboot.RESTAPIMessagingApp.controller;
 
 import org.springframework.web.bind.annotation.*;
+import springboot.RESTAPIMessagingApp.UserDTO;
 
 @RestController
 @RequestMapping("/hello")
@@ -23,5 +24,12 @@ public class Hello {
     @GetMapping("/param/{name}")
     public String sayHello3(@PathVariable String name){
         return "Hello "+ name + " from BridgeLabz";
+    }
+
+    //UC4
+    //UC-04
+    @PostMapping("/post")
+    public String sayHello(@RequestBody UserDTO user) {
+        return "Hello " + user.getFirstName() + " " + user.getLastName() + " from BridgeLabz!";
     }
 }
